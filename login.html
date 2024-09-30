@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UCE - Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+        h2 {
+            margin-bottom: 20px;
+        }
+        .input-group {
+            margin-bottom: 15px;
+        }
+        .input-group label {
+            display: block;
+            text-align: left;
+            margin-bottom: 5px;
+        }
+        .input-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .forgot-password {
+            display: block;
+            margin-top: 15px;
+            font-size: 14px;
+        }
+        .forgot-password a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .forgot-password a:hover {
+            text-decoration: underline;
+        }
+        .signup-link {
+            margin-top: 20px;
+            font-size: 14px;
+        }
+        .signup-link a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .signup-link a:hover {
+            text-decoration: underline;
+        }
+        .fingerprint {
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Login Form -->
+    <div class="container">
+        <h2>Login</h2>
+        <div class="input-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" placeholder="Enter your name">
+        </div>
+        <div class="input-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" placeholder="Enter your username">
+        </div>
+        <div class="input-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Enter your password">
+        </div>
+        
+        <button onclick="login()">Login</button>
+        
+        <!-- Fingerprint Login -->
+        <div class="fingerprint">
+            <button onclick="fingerprintLogin()">Use Fingerprint</button>
+        </div>
+
+        <!-- Forgot Password Link -->
+        <div class="forgot-password">
+            <a href="forgot-password.html">Forgot Password?</a>
+        </div>
+
+        <!-- Signup Link -->
+        <div class="signup-link">
+            Don't have an account? <a href="index.html">Sign Up</a>
+        </div>
+    </div>
+
+    <script>
+        // Placeholder function for login process
+        function login() {
+            var name = document.getElementById('name').value;
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+            
+            // Basic validation (you can expand this later)
+            if (name === '' || username === '' || password === '') {
+                alert('Please fill in all the fields.');
+                return;
+            }
+
+            // Placeholder for actual login logic
+            alert('Logging in...');
+            // After successful login, redirect to homepage
+            window.location.href = 'homepage.html';
+        }
+
+        // Placeholder function for fingerprint login
+        function fingerprintLogin() {
+            alert('Fingerprint login requested.');
+            // In a real-world app, implement fingerprint authentication here
+
+            // Simulate successful fingerprint login
+            setTimeout(function() {
+                alert('Fingerprint verified successfully.');
+                window.location.href = 'homepage.html';
+            }, 1000);
+        }
+    </script>
+
+</body>
+  </html>
