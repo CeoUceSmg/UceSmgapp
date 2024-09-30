@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UCE - Welcome</title>
+    <style>
+        /* CSS Styling for Attractive Design */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            font-weight: bold;
+            margin-bottom: 5px;
+            display: block;
+        }
+        input[type="text"], input[type="email"], input[type="password"], input[type="tel"] {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .form-group .checkbox {
+            display: flex;
+            align-items: center;
+        }
+        .form-group .checkbox input {
+            margin-right: 10px;
+        }
+        .form-group .checkbox label {
+            margin: 0;
+        }
+        .popup-message {
+            display: none;
+            position: fixed;
+            top: 30%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+        .popup-message button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .popup-message button:hover {
+            background-color: #218838;
+        }
+        .signup-btn {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .signup-btn:hover {
+            background-color: #0056b3;
+        }
+        .link {
+            color: #007bff;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+        .link:hover {
+            color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Pop-up Welcome Message -->
+    <div id="popupMessage" class="popup-message">
+        <p>Hello, welcome to UCE!</p>
+        <p>You are on your way to breaking through financial crisis. Don't give up yet!</p>
+        <button onclick="closePopup()">Thanks</button>
+    </div>
+
+    <!-- Sign-up Form Container -->
+    <div class="container">
+        <h1>Sign Up</h1>
+        <form id="signupForm">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" required>
+            </div>
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" required>
+            </div>
+            <div class="form-group">
+                <label for="registrationCode">Registration Code</label>
+                <input type="text" id="registrationCode" required>
+                <p><small>The code is required for account registration.</small></p>
+            </div>
+            <div class="form-group checkbox">
+                <input type="checkbox" id="terms" required>
+                <label for="terms">I agree to the <span class="link" onclick="redirectToTerms()">terms and conditions</span></label>
+            </div>
+            <div class="form-group">
+                <p class="link" onclick="requestCode()">Request code</p>
+            </div>
+            <button class="signup-btn" type="submit">Sign Up</button>
+            <p class="link" onclick="redirectToLogin()">Already have an account? Log in</p>
+        </form>
+    </div>
+
+    <script>
+        // Show pop-up message when the page loads
+        window.onload = function() {
+            document.getElementById('popupMessage').style.display = 'block';
+        }
+
+        // Function to close the pop-up message
+        function closePopup() {
+            document.getElementById('popupMessage').style.display = 'none';
+        }
+
+        // Redirect to Terms and Conditions page
+        function redirectToTerms() {
+            window.location.href = 'terms.html'; // Change to the actual terms.html page
+        }
+
+        // Redirect to Login Page
+        function redirectToLogin() {
+            window.location.href = 'login.html'; // Change to the actual login.html page
+        }
+
+        // Request Registration Code via WhatsApp
+        function requestCode() {
+            window.open('https://wa.me/2349049307270?text=Registration%20code%20request', '_blank');
+        }
+    </script>
+</body>
+</html>
