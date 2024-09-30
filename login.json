@@ -1,0 +1,68 @@
+{
+  "users": [
+    {
+      "username": "user1",
+      "password": "password123",
+      "alternativePassword": "UCEOTP-817364529"
+    },
+    {
+      "username": "user2",
+      "password": "password456",
+      "alternativePassword": "UCEOTP-354192867"
+    },
+    {
+      "username": "user3",
+      "password": "password789",
+      "alternativePassword": "UCEOTP-982176543"
+    }
+    // Add more user records here
+  ],
+  "alternativePasswords": [
+    "UCEOTP-817364529", "UCEOTP-354192867", "UCEOTP-982176543", "UCEOTP-467583210",
+    "UCEOTP-135798264", "UCEOTP-628534917", "UCEOTP-743216985"for 
+    // Add more OTP codes here
+  ]
+<<script>
+    const alternativePasswords = [
+        'UCEOTP-817364529', 'UCEOTP-354192867', 'UCEOTP-982176543', 'UCEOTP-467583210', 
+        'UCEOTP-135798264', 'UCEOTP-628534917', 'UCEOTP-743216985', 'UCEOTP-519837462', 
+        'UCEOTP-864273159', 'UCEOTP-982735641', 'UCEOTP-276598134', 'UCEOTP-432198756', 
+        'UCEOTP-985643217', 'UCEOTP-147852369', 'UCEOTP-658723194', 'UCEOTP-321984657', 
+        'UCEOTP-894321758', 'UCEOTP-275634819', 'UCEOTP-943216587', 'UCEOTP-463958273', 
+        'UCEOTP-198463725', 'UCEOTP-756384192', 'UCEOTP-639217854', 'UCEOTP-842159637', 
+        'UCEOTP-594387216', 'UCEOTP-817263954', 'UCEOTP-428197635', 'UCEOTP-935476128', 
+        'UCEOTP-742193856', 'UCEOTP-519824367', 'UCEOTP-986754321', 'UCEOTP-147385269', 
+        'UCEOTP-658394172', 'UCEOTP-321759846', 'UCEOTP-894657321', 'UCEOTP-275983614', 
+        'UCEOTP-943658227', 'UCEOTP-463726985', 'UCEOTP-198463527', 'UCEOTP-756384192', 
+        'UCEOTP-639217854', 'UCEOTP-842159637', 'UCEOTP-594387216', 'UCEOTP-817263954', 
+        'UCEOTP-428197635', 'UCEOTP-935476128', 'UCEOTP-742193856', 'UCEOTP-519824367', 
+        'UCEOTP-986754321', 'UCEOTP-658723194', 'UCEOTP-321984657', 'UCEOTP-894321758', 
+        'UCEOTP-275634819', 'UCEOTP-943216587', 'UCEOTP-463958273', 'UCEOTP-198463725', 
+        'UCEOTP-756384192', 'UCEOTP-639217854', 'UCEOTP-842159637', 'UCEOTP-594387216', 
+        'UCEOTP-817263954', 'UCEOTP-428197635', 'UCEOTP-935476128', 'UCEOTP-742193856', 
+        'UCEOTP-519824367', 'UCEOTP-986754321'
+        // All OTP codes are now included
+    ];
+
+    const loginBtn = document.getElementById('loginBtn');
+    const errorMessage = document.getElementById('errorMessage');
+
+    // Function to verify alternative password (OTP)
+    loginBtn.addEventListener('click', function() {
+        const password = document.getElementById('password').value;
+        let validOTP = false;
+
+        // Check if the input password matches any alternative password (OTP)
+        alternativePasswords.forEach(otp => {
+            if (password === otp) {
+                validOTP = true;
+            }
+        });
+
+        if (validOTP) {
+            window.location.href = "homepage.html"; // Redirect to homepage if OTP is valid
+        } else {
+            errorMessage.textContent = "Invalid alternative password. Please try again.";
+        }
+    });
+</script>
