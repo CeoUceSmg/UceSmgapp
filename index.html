@@ -150,3 +150,69 @@
 
 </body>
           </html>
+
+<!-- Login Form -->
+<div class="container">
+    <h2>Login</h2>
+    <div class="input-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" placeholder="Enter your name">
+    </div>
+    <div class="input-group">
+        <label for="username">Username</label>
+        <input type="text" id="username" placeholder="Enter your username">
+    </div>
+    <div class="input-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="Enter your password">
+    </div>
+    
+    <button onclick="login()">Login</button>
+    
+    <!-- Fingerprint Login -->
+    <div class="fingerprint">
+        <button onclick="fingerprintLogin()">Use Fingerprint</button>
+    </div>
+
+    <!-- Forgot Password Link -->
+    <div class="forgot-password">
+        <a href="forgot-password.html">Forgot Password?</a>
+    </div>
+
+    <!-- Signup Link -->
+    <div class="signup-link">
+        Don't have an account? <a href="index.html">Sign Up</a>
+    </div>
+</div>
+
+<script>
+    // Placeholder function for login process
+    function login() {
+        var name = document.getElementById('name').value;
+        var username = document.getElementById('username').value;
+        var password = document.getElementById('password').value;
+        
+        // Basic validation (you can expand this later)
+        if (name === '' || username === '' || password === '') {
+            alert('Please fill in all the fields.');
+            return;
+        }
+
+        // Placeholder for actual login logic
+        alert('Logging in...');
+        // After successful login, redirect to homepage
+        window.location.href = 'homepage.html';
+    }
+
+    // Placeholder function for fingerprint login
+    function fingerprintLogin() {
+        alert('Fingerprint login requested.');
+        // In a real-world app, implement fingerprint authentication here
+
+        // Simulate successful fingerprint login
+        setTimeout(function() {
+            alert('Fingerprint verified successfully.');
+            window.location.href = 'homepage.html';
+        }, 1000);
+    }
+</script>
